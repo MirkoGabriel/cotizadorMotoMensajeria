@@ -17,4 +17,7 @@ npm install google-distance
 ```
 
 ## Compile
-npm<br>run dev
+```bash
+npm run dev
+```
+http://localhost:4000/api/recorrido?origen=values&destino=values
