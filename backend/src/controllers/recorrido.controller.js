@@ -1,7 +1,7 @@
 var distance = require('google-distance');
 const recorridoCtrl = {};
 
-distance.apiKey = process.env.KEY;
+distance.apiKey = "";
 
 function recorrido(origen,destino) {
       return new Promise((resolve, reject) => {
