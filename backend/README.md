@@ -1,6 +1,6 @@
 # Backend
 ## Steps to install
-* Install node on windows.
+* Install node on mac, linux, windows.
 * Install dependences.
 ```bash
 npm install
