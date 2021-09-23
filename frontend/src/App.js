@@ -76,5 +76,5 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
 }
 
 export default scriptLoader([
-  `https://maps.googleapis.com/maps/api/js?key=AIzaSyBQLBwlf4h9gDvu_eU0v1vO0gj8PtC7lSI&libraries=places`
+  `https://maps.googleapis.com/maps/api/js?key=&libraries=places`
 ])(App);
