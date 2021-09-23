@@ -1,21 +1,10 @@
 # cotizadorMotoMensajeria
-## Requeriments
+## Steps to install
 * Install node on windows.
-* Install express, cors, dotenv.
+* Install dependences.
 ```bash
-npm i express cors dotenv
+npm install
 ```
-
-* Install nodemon.
-```bash
-npm i nodemon -D
-```
-
-* Install google-distance.
-```bash
-npm install google-distance
-```
-
 ## Compile
 ```bash
 npm run dev
