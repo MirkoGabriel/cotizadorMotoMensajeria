@@ -1,4 +1,4 @@
-# Backend
+# Frontend
 ## Steps to install
 * Install react on mac, linux, windows.
 ```bash
@@ -12,4 +12,3 @@ npm install
 ```bash
 npm start
 ```
-http://localhost:4000/api/recorrido?origen=values&destino=values
