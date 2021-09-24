@@ -28,12 +28,19 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
     setDestination(value);
   }
    
-  async function accion () {
-    console.log(origin)
-    console.log(destination)
-    const res = await axios.get('http://localhost:4000/api/recorrido?origen='+origin+'&destino='+destination);
-    console.log(res.data.distance)
-    setDistance(res.data.distance )
+  async function distanceResponse () {
+    const newRoute = {
+      origin: origin,
+      destination: destination
+  };
+  console.log(newRoute)
+  await axios.post('http://localhost:4000/api/route/',newRoute).then(res => {
+    // do stuff
+    setDistance(res.data.distance);
+}).catch(err => {
+        // what now?
+        console.log(err)
+    })
   }
 
   function autocompletePlaces(location, handleChange, handleSelect, placeholder) {
@@ -87,7 +94,7 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
                           />
                     </div>
                   </div>
-                  <button className="btn btn-primary btn-block" onClick={() => accion()}>Get Distance</button>
+                  <button className="btn btn-primary btn-block" onClick={() => distanceResponse()}>Get Distance</button>
               </div>
           </div>
       </div>
@@ -99,5 +106,5 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
 }
 
 export default scriptLoader([
-  `https://maps.googleapis.com/maps/api/js?key=&libraries=places`
+  `https://maps.googleapis.com/maps/api/js?key=AIzaSyBQLBwlf4h9gDvu_eU0v1vO0gj8PtC7lSI&libraries=places`
 ])(App);
