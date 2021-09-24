@@ -33,15 +33,15 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
     console.log(destination)
     const res = await axios.get('http://localhost:4000/api/recorrido?origen='+origin+'&destino='+destination);
     console.log(res.data.distance)
-    setDistance(res.data.distance)
+    setDistance(res.data.distance )
   }
 
-  function autocompletePlaces(location, handleChange, handleSelect) {
+  function autocompletePlaces(location, handleChange, handleSelect, placeholder) {
     return(
       <PlacesAutocomplete value={location} onChange={handleChange} onSelect={handleSelect}>
         {({ getInputProps, suggestions, getSuggestionItemProps,loading}) => (
               <div>
-                <input {...getInputProps({ placeholder: 'Enter Address ...'})}/>
+                <input className="form-control" {...getInputProps({ placeholder: placeholder})}/>
                 <div>
                 {loading && <div>Loading...</div>}
                 {suggestions.map((suggestion) => {
@@ -63,12 +63,35 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
 
   if(isScriptLoaded && isScriptLoadSucceed){
     return (
-    <div>
-      {autocompletePlaces(origin, originChange, originSelect)}
-      {autocompletePlaces(destination, destinationChange, destinationSelect)}
-      <button onClick={() => accion()}>Enviar</button>
-      <div>{distance}</div>
-    </div>
+      <div className="container">
+      <div className="row justify-content-center pt-5 mt-5 mr-1">
+          <div className="col-md-3 formulario">
+              <div className="card card-body">
+                  <div className="form-group text-center">
+                      <h4>Cotizador Motos</h4>
+                  </div>
+                  <div className="form-group mb-3">
+                    {autocompletePlaces(origin, originChange, originSelect,"Origin")}
+                  </div>
+                  <div className="form-group mb-3">
+                    {autocompletePlaces(destination, destinationChange, destinationSelect,"Destination")}
+                  </div>
+                  <div>
+                    <div className="form-group mb-3">
+                          <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Distance"
+                              readOnly="readOnly"
+                              value={distance} 
+                          />
+                    </div>
+                  </div>
+                  <button className="btn btn-primary btn-block" onClick={() => accion()}>Get Distance</button>
+              </div>
+          </div>
+      </div>
+  </div>
     );
   }else{
     return (<div></div>);
