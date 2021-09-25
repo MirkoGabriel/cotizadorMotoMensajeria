@@ -23,8 +23,8 @@ routeCtrl.postRoute = (req,res) => {
     route(origin,destination).then(result => {
         console.log(result)
         res.json({distance: result.distanceValue})
-    }).catch(errResult => {
-        console.log(errResult)
+    }).catch(function (error)  {
+      res.status(503).json({ message: 'Location invalid' });
     });
 }
 
