@@ -1,7 +1,7 @@
 var distance = require('google-distance');
 const routeCtrl = {};
 
-distance.apiKey = "AIzaSyBQLBwlf4h9gDvu_eU0v1vO0gj8PtC7lSI";
+distance.apiKey = "";
 
 function route(origin,destination) {
       return new Promise((resolve, reject) => {
