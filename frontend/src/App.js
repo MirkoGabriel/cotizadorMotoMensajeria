@@ -75,7 +75,7 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
           <div className="col-md-3 formulario">
               <div className="card card-body">
                   <div className="form-group text-center">
-                      <h4>Cotizador Motos</h4>
+                      <h4>Moto Mensajería</h4>
                   </div>
                   <div className="form-group mb-3">
                     {autocompletePlaces(origin, originChange, originSelect,"Origin")}
@@ -106,5 +106,5 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
 }
 
 export default scriptLoader([
-  `https://maps.googleapis.com/maps/api/js?key=&libraries=places`
+  `https://maps.googleapis.com/maps/api/js?key=AIzaSyBQLBwlf4h9gDvu_eU0v1vO0gj8PtC7lSI&libraries=places`
 ])(App);
