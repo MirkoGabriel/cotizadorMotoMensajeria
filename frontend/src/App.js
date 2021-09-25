@@ -4,6 +4,7 @@ import PlacesAutocomplete from 'react-places-autocomplete';
 import scriptLoader from 'react-async-script-loader';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import swal from 'sweetalert';
 
 function App({isScriptLoaded, isScriptLoadSucceed }) {
 
@@ -40,23 +41,27 @@ function App({isScriptLoaded, isScriptLoadSucceed }) {
 }).catch(err => {
         // what now?
         console.log(err)
+        swal({
+          text: 'Location invalid',
+          icon: 'error'
+      })
     })
   }
 
   function autocompletePlaces(location, handleChange, handleSelect, placeholder) {
     return(
-      <PlacesAutocomplete value={location} onChange={handleChange} onSelect={handleSelect}>
+      <PlacesAutocomplete value={location} onChange={handleChange} onSelect={handleSelect} key={placeholder}>
         {({ getInputProps, suggestions, getSuggestionItemProps,loading}) => (
               <div>
                 <input className="form-control" {...getInputProps({ placeholder: placeholder})}/>
                 <div>
                 {loading && <div>Loading...</div>}
-                {suggestions.map((suggestion) => {
+                {suggestions.map((suggestion, pos) => {
                   const style = suggestion.active 
                     ? { backgroundColor: "#8ba4cc", cursor: "pointer"} 
                     : { backgroundColor: "#ffffff", cursor: "pointer"};
                   return (
-                    <div {...getSuggestionItemProps(suggestion, {style})} >
+                    <div {...getSuggestionItemProps(suggestion, {style})} key={pos}>
                       {suggestion.description}
                     </div>
                   );
