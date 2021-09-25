@@ -3,4 +3,4 @@
 
 ## Tecnologies
 * Client: React, Bootsrap, HTML.
-* Server: Node, express.
+* Server: Node, Express.
