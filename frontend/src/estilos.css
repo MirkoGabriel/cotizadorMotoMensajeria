@@ -1,0 +1,99 @@
+/*======== Globales ===========*/
+
+@import url('https:/fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/*========== MENU ===========*/
+
+#menu a {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color:tomato;
+}
+
+/*======= LOGO ========*/
+
+#logo{
+    float: left;
+}
+
+/* ===== CUERPO ======*/
+
+.banner{
+	background:url(./img/banner.jpg) no-repeat center fixed;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	-ms-background-size:cover;
+	min-height:630px;
+	position: relative;
+}
+
+.info{
+    margin: 8em 16em;
+    position: relative;
+    padding: 4em 0;
+    background:rgba(46, 45, 45, 0.55);
+}
+
+.info{
+    margin-top: 4em;
+    text-align: center;
+}
+
+.banner h3{
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.banner p{
+    color: #ffffff;
+    text-align: center;
+    line-height: 28px;
+    width: 63%;
+    margin: 30px auto;
+    font-size: 17px;
+}
+
+.banner a{
+    position: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    letter-spacing: 2px;
+    background: #cc0000;
+    padding: 12px 30px;
+}
+
+.banner a:focus{
+    outline: none;
+}
+
+.banner a:hover{
+    background: #cc0000;
+}
+
+.footer{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(24, 23, 23);
+    height: 60px;
+    line-height: 60px;
+}
+
+
+
+
